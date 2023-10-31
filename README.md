@@ -1,6 +1,9 @@
-# GtiDep
+# Credenciamento de clientes
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.8.
+This project was made using <a href="https://github.com/angular/angular-cli">Angular CLI</a> 16.2 + <a href="https://getbootstrap.com/">Bootstrap</a> 5.3 and web API <a href="https://viacep.com.br/">Viacep</a> using local storage.
+<hr>
+
+![alt text](https://github.com/cesarbrancalhao/gti_dep/blob/main/img/new.png?raw=true)
 
 ## Development server
 
