@@ -1,0 +1,30 @@
+<div class="usercontact-list">
+  <div class="table-responsive">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Código</th>
+          <th>Nome</th>
+          <th>Endereço</th>
+          <th>Email</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let usercon of usercontacts">
+          <td>{{ usercon.id }}</td>
+          <td>{{ usercon.nome }}</td>
+          <td>{{ usercon.endereco }}</td>
+          <td>{{ usercon.email }}</td>
+          <td>
+            <button class="btn btn-primary" (click)="editUserContact(usercon)">Edit</button>
+          </td>
+          <td>
+            <button class="btn btn-danger ml-2" (click)="deleteUserContact(usercon)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

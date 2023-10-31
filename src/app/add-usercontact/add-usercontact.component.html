@@ -1,0 +1,91 @@
+<div class="col-md-6 mx-auto mt-5">
+  <h2 class="text-center">Adicionar usuário</h2>
+  <form [formGroup]="addForm" (ngSubmit)="onSubmit()" class="mt-4">
+
+    <div class="form-group">
+      <label for="tipo">Tipo de Pessoa:</label>
+      <select formControlName="tipo" class="form-control" id="tipo">
+        <option value="f">Pessoa física</option>
+        <option value="j">Pessoa jurídica</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="documento">Documento (CPF/CPNJ):</label>
+      <input formControlName="documento" placeholder="000.000.000-00 ou 00.000.000/0000-00" name="documento" class="form-control" id="documento">
+      <div class="feedback-red" *ngIf="isInvalid('documento')">
+        Documento inválido.<br />
+        Certifique-se de inserir os caracteres ".", "/" e/ou "-".
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="nome">Nome/Razão:</label>
+      <input formControlName="nome" placeholder="" name="nome" class="form-control" id="nome">
+      <div class="feedback-red" *ngIf="isInvalid('nome')">
+        Nome está vazio.
+      </div>
+    </div>
+
+    <div class="form-group" *ngIf="addForm.get('tipo')?.value === 'j'">
+      <label for="nomeF">Nome Fantasia:</label>
+      <input formControlName="nomeF" placeholder="SOFT-TI informática" name="nomeF" class="form-control" id="nomeF">
+      <div class="feedback-red" *ngIf="isInvalid('nomeF')">
+        Nome fantasia está vazio.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="cep">CEP:</label>
+      <input formControlName="cep" placeholder="00000000" name="cep" class="form-control" id="cep">
+      <div class="feedback-red" *ngIf="isInvalid('cep') || addForm.get('cep')?.hasError('invalidCep')">
+        {{ addForm.get('cep')?.hasError('invalidCep') ? 'CEP inválido, apenas números.' : 'CEP está vazio.' }}
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="endereco">Endereço:</label>
+      <input formControlName="endereco" placeholder="Rua Califórnia, 44" name="endereco" class="form-control" id="endereco">
+      <div class="feedback-red" *ngIf="isInvalid('endereco')">
+        Endereço está vazio.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="bairro">Bairro:</label>
+      <input formControlName="bairro" placeholder="Jardim Paula" name="bairro" class="form-control" id="bairro">
+      <div class="feedback-red" *ngIf="isInvalid('bairro')">
+        Bairro está vazio.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="cidade">Cidade:</label>
+      <input formControlName="cidade" placeholder="Foz do Iguaçu" name="cidade" class="form-control" id="cidade">
+      <div class="feedback-red" *ngIf="isInvalid('cidade')">
+        Cidade está vazia.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="telefone">Telefone:</label>
+      <input formControlName="telefone" placeholder="+55 (45) 9 0000-0000" name="telefone" class="form-control" id="telefone">
+      <div class="feedback-red" *ngIf="isInvalid('telefone')">
+        Telefone está vazio.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" formControlName="email" placeholder="cesarexemplo@email.com" name="email" class="form-control" id="email">
+      <div class="feedback-red" *ngIf="isEmailInvalid('email')">
+        Email inválido.
+      </div>
+    </div>
+
+    <div class="text-center mt-4">
+      <button class="btn btn-success margen-botao">Enviar</button>
+      <button class="btn btn-danger custom-margin" (click)="onCancel()">Cancelar</button>
+    </div>
+  </form>
+</div>
