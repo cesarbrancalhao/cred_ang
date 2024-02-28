@@ -3,7 +3,7 @@
 This project was made using <a href="https://github.com/angular/angular-cli">Angular CLI</a> 16.2 + <a href="https://getbootstrap.com/">Bootstrap</a> 5.3 and web API <a href="https://viacep.com.br/">Viacep</a> using local storage.
 <hr>
 
-Check it live: https://cesarbrancalhao.github.io/gti_dep/
+Check it [live](https://cesarbrancalhao.github.io/cred_ang/).
 
 ![alt text](https://github.com/cesarbrancalhao/gti_dep/blob/main/img/new.png?raw=true)
 
